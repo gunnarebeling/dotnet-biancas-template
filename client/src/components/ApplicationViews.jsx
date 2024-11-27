@@ -5,6 +5,7 @@ import Login from "./auth/Login";
 import Register from "./auth/Register";
 import WorkOrderList from "./workorders/WorkOrdersList";
 import CreateWorkOrder from "./workorders/CreateWorkOrder";
+import UserProfileList from "./userProfiles/UsersProfileList";
 
 export default function ApplicationViews({ loggedInUser, setLoggedInUser }) {
   return (
@@ -48,8 +49,9 @@ export default function ApplicationViews({ loggedInUser, setLoggedInUser }) {
           path="employees"
           element={
             <AuthorizedRoute roles={["Admin"]} loggedInUser={loggedInUser}>
-              <p>Employees</p>
+             <UserProfileList/>
             </AuthorizedRoute>
+          
           }
         />
         <Route
